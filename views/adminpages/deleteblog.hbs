@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="deleteblog/deleteblog/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    {{>navbar}}
+    <h1 style="text-align: center;">Delete Blog</h1>
+    <div style="width: 50%;display: flex;flex-direction: column;align-items: center;margin-left: auto;margin-right: auto;">
+    <img src={{blog.imgUrl}} style="height: 50%; width:50%;" alt="">
+    <h4>{{blog.title}}</h4>
+    <p>{{blog.caption}}</p>
+    <form action="/deleteblog/{{blog.id}}" method="POST">
+    <button type="button" onclick="location.href = '/updateblog/{{blog.id}}';">update</button>
+    <button type="submit">delete</button>
+    </form>
+    </div>
+</body>
+</html>

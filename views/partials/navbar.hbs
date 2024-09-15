@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <div>
+            <a href="/category">Category</a>
+        </div>
+        <div>
+            <a href="/addblog">Add Post</a>
+        </div>
+        {{#if user}}
+        <div>
+            <a href="/profile">Hi, {{user.Username}}</a>
+        </div>
+        {{else}}
+        <div>
+            <a href="/login">Login</a>
+        </div>
+        {{/if }}
+    </nav>
+</body>
+</html>

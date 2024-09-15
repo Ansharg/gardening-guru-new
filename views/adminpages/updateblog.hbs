@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="updateblog/css/navbar.css">
+</head>
+
+<body>
+    {{>navbar}}
+    <form action="/updateblog/{{blog.id}}" method="POST">
+        <label for="imgUrl">imgUrl</label>
+        <input type="text" id="imgUrl" name="imgUrl" value="{{blog.imgUrl}}">
+        <label for="title">title</label>
+        <input type="text" name="title" id="title" value="{{blog.title}}">
+        <label for="caption">caption</label>
+        <input type="text" name="caption" id="caption" value="{{blog.caption}}">
+        <label for="category">category</label>
+        <select name="category" id="category">
+            <option value="sports" {{#ifEquals blog.category 'sports' }}selected{{/ifEquals}}>Sports</option>
+            <option value="business" {{#ifEquals blog.category 'business' }}selected{{/ifEquals}}>Business</option>
+            <option value="educational" {{#ifEquals blog.category 'educational'}}selected{{/ifEquals}}>Educational</option>
+            <option value="current affairs" {{#ifEquals blog.category 'current affairs' }}selected{{/ifEquals}}>Current Affairs
+            </option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

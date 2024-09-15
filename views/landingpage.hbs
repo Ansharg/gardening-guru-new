@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    {{>navbar}}
+    <h1 style="text-align: center;">Welcome to Our Website</h1>
+    {{#each blogs}}
+    <div>
+        <h4>{{this.title}}</h4>
+        <img src={{this.imgUrl}} alt={{title}}>
+        <p>{{caption}}</p>
+    </div>
+    {{/each}}
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{> navbar}}
+    <form action="/category" method="post">
+    <label for="category">Category: </label>
+    <select name="category" id="category">
+        <option value="sports" {{#ifEquals category 'sports' }}selected{{/ifEquals}}>Sports</option>
+            <option value="business" {{#ifEquals category 'business' }}selected{{/ifEquals}}>Business</option>
+            <option value="educational" {{#ifEquals category 'educational'}}selected{{/ifEquals}}>Educational</option>
+            <option value="current affairs" {{#ifEquals category 'current affairs' }}selected{{/ifEquals}}>Current Affairs
+            </option>
+    </select>
+    <button type="submit">Submit</button>
+    </form>
+    {{#each blogs}}
+    <div>
+        <h4>{{this.title}}</h4>
+        <img src={{this.imgUrl}} alt={{title}}>
+        <p>{{caption}}</p>
+    </div>
+    {{/each}}
+</body>
+</html>
