@@ -76,7 +76,7 @@ module.exports.Logout = (req, res) => {
 
 module.exports.UpdateUsername = async (req,res) => {
     try {
-        const user = await User.findByIdAndUpdate(req.session.user._id,{UserName: req.body.name});
+        const user = await User.findByIdAndUpdate(req.body.id,{UserName: req.body.name});
         res.status(200).json({message: "Username updated successfully"})
     } catch (error) {
         console.log(error);
