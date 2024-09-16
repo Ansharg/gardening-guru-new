@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 module.exports.SendEmail = async (email, subject, id, token) => {
     try {
-        const verificationLink = `https://gardening-guru-new.vercel.app/user/verify/${id}/${token}`
+        const verificationLink = `https://gardening-guru-new.onrender.com/user/verify/${id}/${token}`
         const transporter = nodemailer.createTransport({
             // host: "smtp.forwardemail.net",
             service: "gmail",

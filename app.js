@@ -6,12 +6,15 @@ require('dotenv').config()
 const routerplant = require("./routes/Plant");
 const routerauth = require("./routes/Auth");
 const session = require("express-session");
+const MemoryStore = require('memorystore')(session)
 
 app.use(session({
     secret: 'secret',
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Set to true if you are using HTTPS
+    // saveUninitialized: true,
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
   }));
 
 app.use(express.static(path.join(__dirname, "static")));
