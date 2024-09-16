@@ -18,6 +18,9 @@ module.exports.AddPlant = async (req, res) => {
     const { imgUrl, name } = req.body;
     const plant = new Object({ imgUrl: imgUrl, name: name });
     let user = await User.findById(req.session.user._id);
+    if (!user) {
+      res.status(404).json({message: "User not found" });
+    }
     user.garden.push(plant);
     await user.save();
     res.status(200).json({ message: "plant added successfully" });
