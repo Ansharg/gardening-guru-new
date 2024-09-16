@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
+require('dotenv').config()
 const routerplant = require("./routes/Plant");
 const routerauth = require("./routes/Auth");
 const session = require("express-session");
@@ -24,7 +25,7 @@ app.get("/", (req, res) => {
 app.use("/", routerauth);
 app.use("/", routerplant);
 
-mongoose.connect("mongodb+srv://anshgarg94161:FNXU6wQid4fIz08Q@gardeningguru.rmzl7.mongodb.net/?retryWrites=true&w=majority&appName=gardeningguru",
+mongoose.connect(process.env.MONGO_URL,
     { useNewUrlParser: true, useUnifiedTopology: true }
 ).then(() => {
     app.listen(3000, () => {

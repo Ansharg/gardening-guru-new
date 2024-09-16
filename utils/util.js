@@ -9,8 +9,8 @@ module.exports.SendEmail = async (email, subject, id, token) => {
             // port: 465,
             // secure: true,
             auth: {
-                user: "noreply.gardeningguru@gmail.com",
-                pass: "vuhm dnjy oofp sdvg",
+                user: process.env.USER_EMAIL,
+                pass: process.env.PASSWORD,
             },
             authMethod: "PLAIN"
         });
