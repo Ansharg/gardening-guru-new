@@ -28,9 +28,7 @@ app.get("/", (req, res) => {
 app.use("/", routerauth);
 app.use("/", routerplant);
 
-mongoose.connect(process.env.MONGO_URL,
-    { useNewUrlParser: true, useUnifiedTopology: true }
-).then(() => {
+mongoose.connect(process.env.MONGO_URL).then(() => {
     app.listen(3000, () => {
       console.log("Server is running at port 3000");
     });
