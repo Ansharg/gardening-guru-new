@@ -3,6 +3,8 @@ const User = require("../model/User");
 module.exports.DisplayAllPlants = async (req, res) => {
   try {
     let {garden} = await User.find({ id: req.body.id });
+    console.log(req.body.id);
+    console.log(garden);
     if (garden.length == 0) {
       res.status(200).json({ message: "No plants found in your garden" });
     }
