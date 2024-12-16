@@ -23,7 +23,7 @@ module.exports.SendEmail = async (email, subject, id, token) => {
             <p>Welcome to Gardening Guru! We're excited to have you on board.</p>
             <p>To get started, please verify your account by clicking the link below:</p>
             <p><a href="${verificationLink}" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #55A05c; text-decoration: none; border-radius: 5px;">Verify Email</a></p>
-            <p>If you encounter any issues or have any questions, feel free to reach out to our support team at support.gardeningguru@gmail.com.</p>
+            <p>If you encounter any issues or have any questions, feel free to reach out to our support team.</p>
             <p>Thank you for joining us!</p>
             <p>Best regards,</p>
             <p>Team Gardening Guru</p>
