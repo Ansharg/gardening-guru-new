@@ -61,7 +61,7 @@ module.exports.Register = async (req,res) => {
                 Password: hash,
             });
             const token = await Token.create({userId: user.id, token: crypto.randomBytes(32).toString("hex")})
-            await SendEmail.SendEmail(user.UserEmail, "Welcome to Gardening Guru! Verify Your Account", user.id, token.token);
+            await SendEmail.SendEmail(user.UserEmail, "Welcome to Gardening Guru! Kindly Verify Your Account", user.id, token.token);
         });
         res.status(200).json({message : " User registered successfully"})
     } catch (error) {
